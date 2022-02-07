@@ -13,6 +13,7 @@ public class MainController : BaseController
 
     private MainMenuController _mainMenuController;
     private GameController _gameController;
+    private TrailController _trailController;
     private readonly Transform _placeForUi;
     private readonly ProfilePlayer _profilePlayer;
 
@@ -30,15 +31,18 @@ public class MainController : BaseController
         {
             case GameState.Start:
                 _mainMenuController = new MainMenuController(_placeForUi, _profilePlayer);
+                _trailController = new TrailController();
                 _gameController?.Dispose();
                 break;
             case GameState.Game:
                 _gameController = new GameController(_profilePlayer);
                 _mainMenuController?.Dispose();
+                _trailController?.Dispose();
                 break;
             default:
                 _mainMenuController?.Dispose();
                 _gameController?.Dispose();
+                _trailController?.Dispose();
                 break;
         }
     }
