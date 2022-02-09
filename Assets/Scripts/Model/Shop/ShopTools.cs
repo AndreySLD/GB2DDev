@@ -7,7 +7,7 @@ using UnityEngine.Purchasing.Security;
 
 namespace Model.Shop
 {
-    internal class ShopTools: IShop, IStoreListener
+    public class ShopTools: IShop, IStoreListener
     {
         private IStoreController _controller;
         private IExtensionProvider _extensionProvider;

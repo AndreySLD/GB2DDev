@@ -12,5 +12,7 @@ public class ProfilePlayer
     public SubscriptionProperty<GameState> CurrentState { get; }
 
     public Car CurrentCar { get; }
+
+    public int GoldAmount;
 }
 
